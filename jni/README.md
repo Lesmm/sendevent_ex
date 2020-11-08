@@ -1,0 +1,1 @@
+##### just run ndk-build in current directory
