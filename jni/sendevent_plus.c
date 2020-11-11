@@ -131,7 +131,11 @@ int main(int argc, char *argv[])
             }
 
             struct timespec ts, ts1;
-            ts.tv_nsec = 5000000; 
+            if (argc == 4) {
+                ts.tv_nsec = atol(argv[3]);
+            } else {
+                ts.tv_nsec = 10000000; 
+            }
             ts.tv_sec = 0;
             if ( nanosleep(&ts, &ts1) == -1 ) {
                 printf("nanosleep error!\n");
